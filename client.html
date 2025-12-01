@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head><title>WebSocket Client</title></head>
+<body>
+  <h2>WebSocket Test</h2>
+  <button onclick="sendMessage()">Send Hello</button>
+  <ul id="messages"></ul>
+
+  <script>
+    const socket = new WebSocket("ws://localhost:8080");
+
+    socket.onopen = () => console.log("Connected to server");
+    socket.onmessage = (event) => {
+      console.log("Server says:", event.data);
+      const li = document.createElement("li");
+      li.innerText = event.data;
+      document.getElementById("messages").appendChild(li);
+    }
+
+    function sendMessage() {
+      socket.send("Hello Server!");
+    }
+  </script>
+</body>
+</html>
+

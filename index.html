@@ -1,0 +1,41 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prime Checker</title>
+</head>
+<body>
+  <input type="text" id="numInput" placeholder="Enter a number">
+  <button onclick="checkprime()">Check</button>
+  <h3 id="result"></h3>
+
+  <script>
+    function checkprime() {
+      const number = document.getElementById("numInput").value;
+
+      fetch(`/check?number=${number}`)
+        .then(res => res.text())
+        .then(data => {
+          document.getElementById("result").innerText = data;
+        });
+    }
+  </script>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h2>fibonacci calculator</h2>
+  <form action="/fib">
+   <input type="number" name="number" placeholder="Enter a number">
+   <button>Find fibonacci</button>
+  </form>
+</body>
+</html>
